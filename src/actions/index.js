@@ -10,6 +10,6 @@ export function fetchPost() {
 
   return {
     type: FETCH_POSTS,
-    payload: request;
+    payload: request
   };
 }
