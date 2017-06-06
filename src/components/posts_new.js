@@ -7,10 +7,11 @@ class PostsNew extends Component {
       <div className="form-group">
         <label>{field.label}</label>
         <input
-        className="form-control"
-        type="text"
+          className="form-control"
+          type="text"
           {...field.input}
         />
+        {field.meta.error}
       </div>
     );
   }
@@ -43,13 +44,13 @@ function validate(values) {
 
   //Validate the inputs from values
   if (!values.title) {
-    errors.title = "Enter a title!";
+    errors.title = "Enter a title";
   }
   if (!values.categories) {
-    errors.categories = "Enter a category!";
+    errors.categories = "Enter at least one category";
   }
   if (!values.content) {
-    errors.content = "Enter some content!";
+    errors.content = "Enter some content";
   }
   // If errors is empty, form is fine to submit
   return errors;
